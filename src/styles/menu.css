@@ -1,10 +1,23 @@
+h1 {
+  font-family: "Averia Libre", cursive;
+  font-size: 5em;
+  padding-top: 40px;
+  margin-bottom: 70px;
+}
+
 .menu-content {
   display: flex;
-  width: 100%;
+  width: 90%;
+  margin: auto auto;
 }
 .item-container {
   flex: 1;
   margin: 5px;
+  width: 100%;
+  border-style: solid;
+  border-width: 10px;
+  background-color: white;
+  padding-top: 5px;
 }
 
 .item-content {
@@ -17,6 +30,11 @@
 .item-content .item-title {
   height: 20%;
   display: block;
+  font-size: 1.5em;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0.3em;
+  font-family: "Averia Libre", cursive;
 }
 
 .item-content .item-img {
