@@ -1,0 +1,35 @@
+.menu-content {
+  display: flex;
+  width: 100%;
+}
+.item-container {
+  flex: 1;
+  margin: 5px;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.item-content .item-title {
+  height: 20%;
+  display: block;
+}
+
+.item-content .item-img {
+  height: 80%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.item-content img {
+  bottom: 0;
+  max-width: 100%;
+}
+
+.item-content #baoen {
+  max-width: 80%;
+}
