@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { getItems } from "./items.js";
+import Content from "./content.jsx";
+import { getItem } from "./items.js";
+import { getPlace } from "./place.js";
+import { getPlacePeriod } from "./place.js";
 import "../styles/menu.css";
 
 import Con from "../imgs/background/confucius.png";
@@ -13,6 +17,7 @@ class Menu extends Component {
     };
     this.handleItemHover = this.handleItemHover.bind(this);
     this.handleItemHoverLeave = this.handleItemHoverLeave.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
   }
   handleItemHover(itemId) {
     this.setState({ hover: itemId });
@@ -20,24 +25,34 @@ class Menu extends Component {
   handleItemHoverLeave() {
     this.setState({ hover: -1 });
   }
+  handleItemClick(itemId) {
+    this.setState({ selected: itemId });
+  }
   render() {
     let parent = this;
     return (
-      <div className="menu-content">
-        {this.state.items.map(function(item, j) {
-          return (
-            <React.Fragment key={j}>
-              {/* {console.log(this)} */}
-              <MenuItem
-                item={item}
-                handleHover={parent.handleItemHover}
-                handleHoverLeave={parent.handleItemHoverLeave}
-                hoverId={parent.state.hover}
-              />
-            </React.Fragment>
-          );
-        })}
-      </div>
+      <React.Fragment>
+        <div className="menu-content">
+          {this.state.items.map(function(item, j) {
+            return (
+              <React.Fragment key={j}>
+                {/* {console.log(this)} */}
+                <MenuItem
+                  item={item}
+                  handleHover={parent.handleItemHover}
+                  handleHoverLeave={parent.handleItemHoverLeave}
+                  handleClick={parent.handleItemClick}
+                  hoverId={parent.state.hover}
+                  selectId={parent.state.selected}
+                />
+              </React.Fragment>
+            );
+          })}
+        </div>
+        <div className="place-content">
+          <Content itemId={this.state.selected} />
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -47,6 +62,7 @@ class MenuItem extends Component {
     super(props);
     this.handleHover = this.handleHover.bind(this);
     this.handleHoverLeave = this.handleHoverLeave.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.getItemStyle = this.getItemStyle.bind(this);
   }
 
@@ -59,8 +75,15 @@ class MenuItem extends Component {
     this.props.handleHoverLeave();
   }
 
+  handleClick() {
+    this.props.handleClick(this.props.item._id);
+  }
+
   getItemStyle() {
-    if (this.props.hoverId == this.props.item._id) {
+    if (
+      this.props.hoverId == this.props.item._id ||
+      this.props.selectId == this.props.item._id
+    ) {
       return {
         borderColor: "#EBC485",
         backgroundImage: `url(${Con})`
@@ -72,6 +95,8 @@ class MenuItem extends Component {
   render() {
     let item = this.props.item;
     let style = this.getItemStyle();
+    let show =
+      this.props.hoverId == item._id || this.props.selectId == item._id;
 
     return (
       <div
@@ -79,11 +104,12 @@ class MenuItem extends Component {
         style={style}
         onMouseEnter={this.handleHover}
         onMouseLeave={this.handleHoverLeave}
+        onClick={this.handleClick}
       >
         <div className="item-content">
           <div className="item-title">{item.name}</div>
           <div className="item-img">
-            {this.props.hoverId == item._id ? (
+            {show ? (
               <img src={item.imgc} id={`${item.img}`} />
             ) : (
               <img src={item.imgu} id={`${item.img}`} />

@@ -51,3 +51,25 @@ h1 {
 .item-content #baoen {
   max-width: 80%;
 }
+
+.place-content {
+  display: block;
+  width: 90%;
+  margin: auto auto;
+}
+
+.information .period-row {
+  background-color: #e0ebfc;
+}
+
+.period img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.period .text {
+  text-align: left;
+  width: 85%;
+  margin: auto auto;
+  margin-top: 1em;
+}
