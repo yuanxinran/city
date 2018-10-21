@@ -5,34 +5,52 @@ import { getPlace } from "./place.js";
 import { getPlacePeriod } from "./place.js";
 
 class Nav extends Component {
-    state = {  }
-    render() { 
-        return (
-            <div className="row period-row">
-            <div className="col-md-3">
-              <span className="badge badge-secondary">567</span>
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  state = {};
+
+  handleClick(periodId) {
+    this.props.handleClick(periodId);
+  }
+  render() {
+    let parent = this;
+    return (
+      <div className="row period-row">
+        {this.props.periods.map(function(year, j) {
+          return (
+            <div
+              className="col-md-3"
+              onClick={() => parent.handleClick(j)}
+              key={j}
+            >
+              <span className="badge badge-secondary">{year}</span>
             </div>
-            <div className="col-md-3">
-              <span className="badge badge-secondary">1567</span>
-            </div>
-            <div className="col-md-3">
-              <span className="badge badge-secondary">2018</span>
-            </div>
-          </div>
-        );
-    }
+          );
+        })}
+        {/* <div className="col-md-3">
+          <span className="badge badge-secondary">1567</span>
+        </div>
+        <div className="col-md-3">
+          <span className="badge badge-secondary">2018</span>
+        </div> */}
+      </div>
+    );
+  }
 }
- 
-export default Nav;
-
-
 
 class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      period: 1
+      period: 0
     };
+    this.handlePeriodClick = this.handlePeriodClick.bind(this);
+  }
+
+  handlePeriodClick(periodId) {
+    this.setState({ period: periodId });
   }
 
   render() {
@@ -43,7 +61,7 @@ class Content extends Component {
         <div className="information">
           {/* <p>{this.props.itemId}</p> */}
           {/* <img src={require(`../imgs/place/${item.img}.png`)} /> */}
-          <Nav />
+          <Nav periods={item.years} handleClick={this.handlePeriodClick} />
           <div className="period">
             <div className="row">
               <div className="col-sm-3 img">
@@ -59,8 +77,8 @@ class Content extends Component {
               <div className="col-sm-9 text">
                 {period.text.map(function(txt, i) {
                   return (
-                    <React.Fragment>
-                      <p key={i}>{txt}</p>
+                    <React.Fragment key={i}>
+                      <p>{txt}</p>
                     </React.Fragment>
                   );
                 })}
@@ -74,6 +92,5 @@ class Content extends Component {
     }
   }
 }
-
 
 export default Content;
