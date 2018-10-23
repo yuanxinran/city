@@ -6,7 +6,7 @@ import { getPlace } from "./place.js";
 import { getPlacePeriod } from "./place.js";
 import "../styles/menu.css";
 
-import Con from "../imgs/background/confucius.png";
+import Con from "../imgs/background/mei.png";
 class Menu extends Component {
   constructor(props) {
     super(props);
@@ -79,22 +79,31 @@ class MenuItem extends Component {
     this.props.handleClick(this.props.item._id);
   }
 
-  getItemStyle() {
+  getItemStyle(itemId) {
+    let result = {};
     if (
       this.props.hoverId == this.props.item._id ||
       this.props.selectId == this.props.item._id
     ) {
-      return {
+      result = {
         borderColor: "#EBC485",
         backgroundImage: `url(${Con})`
       };
     } else {
-      return { borderColor: `${this.props.item.color}` };
+      result = { borderColor: `${this.props.item.color}` };
     }
+
+    // if (itemId % 2 == 0) {
+    //   result.marginTop = "20px";
+    // } else {
+    //   result.marginTop = "3px";
+    // }
+
+    return result;
   }
   render() {
     let item = this.props.item;
-    let style = this.getItemStyle();
+    let style = this.getItemStyle(item._id);
     let show =
       this.props.hoverId == item._id || this.props.selectId == item._id;
 

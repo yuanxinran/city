@@ -12,7 +12,7 @@ h1 {
 }
 .item-container {
   flex: 1;
-  margin: 5px;
+  margin: 10px;
   width: 100%;
   border-style: solid;
   border-width: 10px;
@@ -60,6 +60,18 @@ h1 {
 
 .information .period-row {
   background-color: #e0ebfc;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.year-container:hover {
+  outline: #ebc485 3px solid;
+  font-weight: bold;
+}
+
+.year-text {
+  line-height: 200%;
+  font-size: 1em;
 }
 
 .period img {
@@ -69,7 +81,8 @@ h1 {
 
 .period .text {
   text-align: left;
-  width: 85%;
+  width: 60%;
   margin: auto auto;
   margin-top: 1em;
+  font-size: 1.2em;
 }

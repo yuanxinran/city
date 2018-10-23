@@ -3,17 +3,34 @@ import { getItems } from "./items.js";
 import { getItem } from "./items.js";
 import { getPlace } from "./place.js";
 import { getPlacePeriod } from "./place.js";
+import LineTo from "react-lineto";
 
 class Nav extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.getItemStyle = this.getItemStyle.bind(this);
   }
   state = {};
 
   handleClick(periodId) {
     this.props.handleClick(periodId);
   }
+
+  getItemStyle(inDex) {
+    console.log(this.props.active);
+    console.log(inDex);
+    if (this.props.active == inDex) {
+      console.log("in!");
+      return {
+        backgroundColor: "#EBC485",
+        fontWeight: "bold"
+      };
+    } else {
+      return {};
+    }
+  }
+
   render() {
     let parent = this;
     return (
@@ -21,11 +38,13 @@ class Nav extends Component {
         {this.props.periods.map(function(year, j) {
           return (
             <div
-              className="col-md-3"
+              className={`col-sm-4 year-container`}
               onClick={() => parent.handleClick(j)}
               key={j}
+              style={parent.getItemStyle(j)}
             >
-              <span className="badge badge-secondary">{year}</span>
+              <div className="year-text">{year}</div>
+              {/* <span className="badge badge-secondary">{year}</span> */}
             </div>
           );
         })}
@@ -61,7 +80,11 @@ class Content extends Component {
         <div className="information">
           {/* <p>{this.props.itemId}</p> */}
           {/* <img src={require(`../imgs/place/${item.img}.png`)} /> */}
-          <Nav periods={item.years} handleClick={this.handlePeriodClick} />
+          <Nav
+            periods={item.years}
+            handleClick={this.handlePeriodClick}
+            active={this.state.period}
+          />
           <div className="period">
             <div className="row">
               <div className="col-sm-3 img">
@@ -74,7 +97,7 @@ class Content extends Component {
                   );
                 })}
               </div>
-              <div className="col-sm-9 text">
+              <div className="col-sm-7 offset-sm-1 text">
                 {period.text.map(function(txt, i) {
                   return (
                     <React.Fragment key={i}>
