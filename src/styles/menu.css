@@ -1,8 +1,9 @@
 h1 {
   font-family: "Averia Libre", cursive;
-  font-size: 5em;
+  font-size: 8em;
   padding-top: 40px;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
+  text-shadow: 10px -10px #e6e8ed;
 }
 
 .menu-content {
@@ -12,11 +13,8 @@ h1 {
 }
 .item-container {
   flex: 1;
-  margin: 10px;
   width: 100%;
-  border-style: solid;
-  border-width: 10px;
-  background-color: white;
+  background-color: transparent;
   padding-top: 5px;
 }
 
@@ -28,28 +26,33 @@ h1 {
 }
 
 .item-content .item-title {
-  height: 20%;
   display: block;
-  font-size: 1.5em;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 0.3em;
+  font-size: 3em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
   font-family: "Averia Libre", cursive;
+}
+
+.item-content .less {
+  margin-bottom: 0.8em;
 }
 
 .item-content .item-img {
   height: 80%;
   display: flex;
   flex-direction: column-reverse;
+  border-bottom: grey 10px solid;
 }
 
 .item-content img {
   bottom: 0;
-  max-width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .item-content #baoen {
-  max-width: 80%;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 .place-content {

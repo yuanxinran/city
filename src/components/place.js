@@ -3,11 +3,12 @@ const places = [
     _id: 1,
     name: "Confucius Temple",
     img: "confucius",
-    years: ["551 BC", "384-1932", "Now"],
+    years: ["551BC", "384-1932", "Now"],
     periods: [
       {
         _id: 0,
         year: "551 BC",
+        date: "1998-10-01",
         imgs: ["1"],
         text: [
           "Confucius (551–479 BC)was a Chinese teacher, editor, politician, and philosopher of the Spring and Autumn period of Chinese history.",
@@ -18,6 +19,7 @@ const places = [
       {
         _id: 1,
         year: "384-1932",
+        date: "2008-10-01",
         imgs: [],
         text: [
           "Temple of Confucius was firstly constructed in the national school in the 9th year of Taiyuan (CE 384). The place was later destroyed. In the 1st year of Jingyou during Song Dynasty (CE 1034), Confucius Temple was newly constructed on former site of imperial university, and was called Fuzimiao area along with Nanking Fuxue.",
@@ -28,6 +30,7 @@ const places = [
       {
         _id: 2,
         year: "Now",
+        date: "2018-10-01",
         imgs: [],
         text: [
           "In 1984 the temple was rebuilt under the support of the local government. During the long process, the original building expanded to be a complex building in the architectural style of the Ming (1368-1644) and Qing (1644-1911) dynasties, including the Nanjing Confucius Temple itself, China Imperial Examination Museum and Xue Gong (the Imperial Academy). The complex is still called the Confucius Temple out of habit by locals and visitors.",

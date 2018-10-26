@@ -5,8 +5,8 @@ import { getItem } from "./items.js";
 import { getPlace } from "./place.js";
 import { getPlacePeriod } from "./place.js";
 import "../styles/menu.css";
+import FadeIn from "react-fade-in";
 
-import Con from "../imgs/background/mei.png";
 class Menu extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +28,7 @@ class Menu extends Component {
   handleItemClick(itemId) {
     this.setState({ selected: itemId });
   }
+
   render() {
     let parent = this;
     return (
@@ -80,14 +81,14 @@ class MenuItem extends Component {
   }
 
   getItemStyle(itemId) {
-    let result = {};
+    let result = { backgroundColor: "transparent" };
     if (
       this.props.hoverId == this.props.item._id ||
       this.props.selectId == this.props.item._id
     ) {
       result = {
-        borderColor: "#EBC485",
-        backgroundImage: `url(${Con})`
+        borderColor: "#EBC485"
+        // backgroundImage: `url(${Con})`
       };
     } else {
       result = { borderColor: `${this.props.item.color}` };
@@ -104,6 +105,7 @@ class MenuItem extends Component {
   render() {
     let item = this.props.item;
     let style = this.getItemStyle(item._id);
+    let hiddenS = { visibility: "hidden" };
     let show =
       this.props.hoverId == item._id || this.props.selectId == item._id;
 
@@ -116,14 +118,33 @@ class MenuItem extends Component {
         onClick={this.handleClick}
       >
         <div className="item-content">
-          <div className="item-title">{item.name}</div>
           <div className="item-img">
             {show ? (
-              <img src={item.imgc} id={`${item.img}`} />
+              <React.Fragment>
+                <img src={item.imgc} id={`${item.img}`} />
+                <FadeIn>
+                  <div
+                    className={`item-title ${
+                      item.img == "baoen" ? "less" : ""
+                    }`}
+                  >
+                    {item.name}
+                  </div>
+                </FadeIn>
+              </React.Fragment>
             ) : (
-              <img src={item.imgu} id={`${item.img}`} />
+              <React.Fragment>
+                <img src={item.imgu} id={`${item.img}`} />
+                <div
+                  className={`item-title ${item.img == "baoen" ? "less" : ""}`}
+                  style={hiddenS}
+                >
+                  {item.name}
+                </div>
+              </React.Fragment>
             )}
           </div>
+          {/* <div className="item-title">{item.name}</div> */}
         </div>
       </div>
     );

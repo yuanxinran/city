@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Menu from "./components/menu.jsx";
 import Background from "./imgs/background.png";
+import HorizontalTimeline from "react-horizontal-timeline";
+
+const VALUES = ["09/09/1998", "09/09/2008", "09/09/2018"];
 
 class App extends Component {
   render() {
@@ -12,7 +15,7 @@ class App extends Component {
     };
     return (
       <div className="App" style={back}>
-        <h1>NANJING</h1>
+        <h1>NANJING • 南京</h1>
         <Menu />
       </div>
     );
