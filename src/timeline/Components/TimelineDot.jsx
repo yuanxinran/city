@@ -20,7 +20,7 @@ const dots = {
    */
   base: {
     position: "absolute",
-    bottom: -10,
+    bottom: -7,
     height: 20,
     width: 20,
     borderRadius: "50%",
