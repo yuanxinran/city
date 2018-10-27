@@ -98,7 +98,11 @@ class TimelineDot extends React.Component {
             left: this.props.distanceFromOrigin - this.props.labelWidth / 2,
             cursor: "pointer",
             width: this.props.labelWidth,
-            fontSize: "2em",
+            fontWeight:
+              this.props.index === this.props.selected ? "bold" : "normal",
+            fontSize:
+              this.props.index === this.props.selected ? "2em" : "1.5em",
+            color: this.props.index === this.props.selected ? "black" : "grey",
             ":hover": {} // We need this to track the hover state of this element
           }
         ]}

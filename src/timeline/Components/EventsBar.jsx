@@ -196,71 +196,73 @@ class EventsBar extends React.Component {
       this.props.barPaddingRight;
 
     return (
-      <div
-        style={{
-          width: `${this.props.width}px`,
-          height: `${this.props.height}px`
-        }}
-        {...touchEvents}
-      >
+      <React.Fragment>
         <div
-          className="events-wrapper"
           style={{
-            position: "relative",
-            height: "100%",
-            margin: "0 40px",
-            overflow: "hidden"
+            width: `${this.props.width}px`,
+            height: `${this.props.height}px`
           }}
+          {...touchEvents}
         >
-          <Motion
+          <div
+            className="events-wrapper"
             style={{
-              X: spring(this.state.position, this.slidingMotion)
+              position: "relative",
+              height: "100%",
+              margin: "0 40px",
+              overflow: "hidden"
             }}
           >
-            {({ X }) => (
-              <div
-                className="events"
-                style={{
-                  position: "absolute",
-                  left: 0,
-                  top: 49,
-                  height: 4,
-                  width: this.props.totalWidth,
-                  WebkitTransform: `translate3d(${X}, 0, 0)px`,
-                  transform: `translate3d(${X}px, 0, 0)`
-                }}
-              >
-                <EventLine
-                  left={this.props.barPaddingLeft}
-                  width={eventLineWidth}
-                  fillingMotion={this.props.fillingMotion}
-                  backgroundColor={this.props.styles.outline}
-                />
-                <EventLine
-                  left={this.props.barPaddingLeft}
-                  width={filledValue}
-                  fillingMotion={this.props.fillingMotion}
-                  backgroundColor={this.props.styles.foreground}
-                />
-                <Events
-                  events={this.props.events}
-                  selectedIndex={this.props.index}
-                  styles={this.props.styles}
-                  handleDateClick={this.props.indexClick}
-                  labelWidth={this.props.labelWidth}
-                />
-              </div>
-            )}
-          </Motion>
-        </div>
-        <Faders styles={this.props.styles} />
-        <HorizontalTimelineButtons
+            <Motion
+              style={{
+                X: spring(this.state.position, this.slidingMotion)
+              }}
+            >
+              {({ X }) => (
+                <div
+                  className="events"
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 49,
+                    height: 4,
+                    width: this.props.totalWidth,
+                    WebkitTransform: `translate3d(${X}, 0, 0)px`,
+                    transform: `translate3d(${X}px, 0, 0)`
+                  }}
+                >
+                  <EventLine
+                    left={this.props.barPaddingLeft}
+                    width={eventLineWidth}
+                    fillingMotion={this.props.fillingMotion}
+                    backgroundColor={this.props.styles.outline}
+                  />
+                  <EventLine
+                    left={this.props.barPaddingLeft}
+                    width={filledValue}
+                    fillingMotion={this.props.fillingMotion}
+                    backgroundColor={this.props.styles.foreground}
+                  />
+                  <Events
+                    events={this.props.events}
+                    selectedIndex={this.props.index}
+                    styles={this.props.styles}
+                    handleDateClick={this.props.indexClick}
+                    labelWidth={this.props.labelWidth}
+                  />
+                </div>
+              )}
+            </Motion>
+          </div>
+          <Faders styles={this.props.styles} />
+          {/* <HorizontalTimelineButtons
           maxPosition={this.state.maxPosition}
           position={this.state.position}
           styles={this.props.styles}
           updateSlide={this.updateSlide}
-        />
-      </div>
+        /> */}
+        </div>
+      </React.Fragment>
     );
   }
 }

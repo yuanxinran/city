@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { getItems } from "./items.js";
 import Content from "./content.jsx";
 import { getItem } from "./items.js";
-import { getPlace } from "./place.js";
-import { getPlacePeriod } from "./place.js";
+import { getPlace } from "./place.jsx";
+import { getPlacePeriod } from "./place.jsx";
+import { getContent } from "./place.jsx";
 import "../styles/menu.css";
 import FadeIn from "react-fade-in";
 
@@ -13,11 +14,14 @@ class Menu extends Component {
     this.state = {
       items: getItems(),
       hover: -1,
-      selected: -1
+      selected: -1,
+      periodInfo: null,
+      period: 0
     };
     this.handleItemHover = this.handleItemHover.bind(this);
     this.handleItemHoverLeave = this.handleItemHoverLeave.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.changePeriod = this.changePeriod.bind(this);
   }
   handleItemHover(itemId) {
     this.setState({ hover: itemId });
@@ -27,6 +31,16 @@ class Menu extends Component {
   }
   handleItemClick(itemId) {
     this.setState({ selected: itemId });
+    this.setState({ periodInfo: getContent(itemId, 0), period: 0 });
+  }
+
+  changePeriod(index) {
+    console.log(this.state.selected);
+    console.log(index);
+    this.setState({
+      periodInfo: getContent(this.state.selected, index),
+      period: index
+    });
   }
 
   render() {
@@ -51,7 +65,12 @@ class Menu extends Component {
           })}
         </div>
         <div className="place-content">
-          <Content itemId={this.state.selected} />
+          <Content
+            itemId={this.state.selected}
+            changePeriod={this.changePeriod}
+            periodInfo={this.state.periodInfo}
+            period={this.state.period}
+          />
         </div>
       </React.Fragment>
     );

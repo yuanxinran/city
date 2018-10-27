@@ -15,6 +15,7 @@
     "react-horizontal-timeline": "^1.5.3",
     "react-icons": "^3.2.2",
     "react-lineto": "^3.1.2",
+    "react-responsive-carousel": "^3.1.43",
     "react-scripts": "2.0.5"
   },
   "scripts": {

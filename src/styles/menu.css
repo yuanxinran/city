@@ -28,6 +28,7 @@ h1 {
 .item-content .item-title {
   display: block;
   font-size: 3em;
+  color: #595959;
   margin-bottom: 1.5em;
   font-weight: bold;
   font-family: "Averia Libre", cursive;
@@ -61,11 +62,21 @@ h1 {
   margin: auto auto;
 }
 
-.information .period-row {
+.period-detail {
+  width: 90%;
+  margin: auto auto;
+  margin-top: 3em;
+  /* background-color: #d9e4f7; */
+  padding: 20px;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+/* .period-row {
   background-color: #e0ebfc;
   margin-top: 2em;
   margin-bottom: 2em;
-}
+} */
 
 .year-container:hover {
   outline: #ebc485 3px solid;
@@ -77,20 +88,37 @@ h1 {
   font-size: 1em;
 }
 
+.period .row {
+  margin-bottom: 3em;
+  background-color: #fcf8f2;
+  border-radius: 10px;
+  padding: 40px 20px;
+}
+
 .period img {
   max-width: 100%;
-  margin-bottom: 10px;
 }
 
 .period .text {
   text-align: left;
   width: 60%;
   margin: auto auto;
-  margin-top: 1em;
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 
 .footer img {
   min-width: 100%;
   max-width: 100%;
+}
+
+.timeline h6 {
+  text-align: left;
+  margin-left: 5%;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Averia Libre", cursive;
+}
+
+.dot-label {
+  font-family: "Averia Libre", cursive;
 }

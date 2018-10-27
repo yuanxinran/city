@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: "Averia Libre", cursive;
+  /* font-family: "Libre Baskerville", serif; */
 }
 
 .App-logo {

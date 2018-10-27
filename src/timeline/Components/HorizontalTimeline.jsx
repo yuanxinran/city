@@ -49,9 +49,13 @@ class HorizontalTimeline extends React.Component {
     //   props.linePadding
     // );
 
-    const eachwidth = (visibleWidth - 200) / 2;
+    const eachwidth = (visibleWidth - 200) / 10;
 
-    const distances = [100, 100 + eachwidth, 100 + eachwidth * 2];
+    const distances = [
+      100,
+      100 + eachwidth * this.props.cutoff,
+      visibleWidth - 100
+    ];
 
     const events = distances.map((distance, index) => ({
       distance,
@@ -63,11 +67,6 @@ class HorizontalTimeline extends React.Component {
       events[events.length - 1].distance + this.props.linePadding,
       visibleWidth
     );
-
-    console.log("haha");
-    console.log(totalWidth);
-    console.log(visibleWidth);
-    console.log(distances);
 
     // Convert the distances and dates to events
 
