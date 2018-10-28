@@ -101,7 +101,7 @@ class Content extends Component {
                 outline: state.stylesOutline
                 // fontSize: "3em"
               }}
-              values={VALUES}
+              values={item.years}
               labels={item.years}
               cutoff={item.cutoff}
               isOpenEnding={state.isOpenEnding}

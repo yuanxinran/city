@@ -51,11 +51,14 @@ class HorizontalTimeline extends React.Component {
 
     const eachwidth = (visibleWidth - 200) / 10;
 
-    const distances = [
-      100,
-      100 + eachwidth * this.props.cutoff,
-      visibleWidth - 100
-    ];
+    let distances = [100, visibleWidth - 100];
+    if (this.props.cutoff != -1) {
+      distances = [
+        100,
+        100 + eachwidth * this.props.cutoff,
+        visibleWidth - 100
+      ];
+    }
 
     const events = distances.map((distance, index) => ({
       distance,
