@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "25c3784f928b25e304a28fcdf9007693",
-    "url": "/city/static/media/6.25c3784f.png"
+    "revision": "fe4739110f9fb7f09f672e3e51407436",
+    "url": "/city/static/media/footer.fe473911.png"
   },
   {
-    "revision": "097761d938649f373383",
-    "url": "/city/static/css/main.d869f503.chunk.css"
+    "revision": "32f119239db87317cee1",
+    "url": "/city/static/css/main.3423848c.chunk.css"
   },
   {
     "revision": "f9c2aeb981b186c041d4b572a6fdb208",
     "url": "/city/static/media/9.f9c2aeb9.png"
   },
   {
-    "revision": "78d25f31b7f92e5f6992",
-    "url": "/city/static/js/1.78d25f31.chunk.js"
+    "revision": "d7a75552b79cf833f10a",
+    "url": "/city/static/js/1.d7a75552.chunk.js"
   },
   {
     "revision": "d9bbb711339ebeaa2cc9",
@@ -108,16 +108,24 @@ self.__precacheManifest = [
     "url": "/city/static/media/5.ac5fd067.png"
   },
   {
-    "revision": "097761d938649f373383",
-    "url": "/city/static/js/main.097761d9.chunk.js"
+    "revision": "25c3784f928b25e304a28fcdf9007693",
+    "url": "/city/static/media/6.25c3784f.png"
   },
   {
-    "revision": "fe4739110f9fb7f09f672e3e51407436",
-    "url": "/city/static/media/footer.fe473911.png"
+    "revision": "32f119239db87317cee1",
+    "url": "/city/static/js/main.32f11923.chunk.js"
   },
   {
     "revision": "06b6ac284186c0c1ffd15a024e62e46a",
     "url": "/city/static/media/footer1.06b6ac28.png"
+  },
+  {
+    "revision": "8c83e90f589fd477e943f2b8cd5d7f23",
+    "url": "/city/static/media/10.8c83e90f.png"
+  },
+  {
+    "revision": "87c6c740352e5fdeb35194f8870afbac",
+    "url": "/city/static/media/11.87c6c740.png"
   },
   {
     "revision": "5ea1a3c88990e7b8c03d81709b4f94b9",
@@ -208,11 +216,11 @@ self.__precacheManifest = [
     "url": "/city/static/media/8.7a74047b.png"
   },
   {
-    "revision": "78d25f31b7f92e5f6992",
-    "url": "/city/static/css/1.1bb3264b.chunk.css"
+    "revision": "d7a75552b79cf833f10a",
+    "url": "/city/static/css/1.d208e434.chunk.css"
   },
   {
-    "revision": "4d2a379a238f6ded6c6b3f6b16382b36",
+    "revision": "46188517ff430fadedcb84233fb868b6",
     "url": "/city/index.html"
   }
 ];
