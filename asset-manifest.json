@@ -1,7 +1,7 @@
 {
-  "main.css": "/city/static/css/main.3423848c.chunk.css",
-  "main.js": "/city/static/js/main.cd6d271b.chunk.js",
-  "main.js.map": "/city/static/js/main.cd6d271b.chunk.js.map",
+  "main.css": "/city/static/css/main.f17d9d68.chunk.css",
+  "main.js": "/city/static/js/main.954bad96.chunk.js",
+  "main.js.map": "/city/static/js/main.954bad96.chunk.js.map",
   "static/css/1.d208e434.chunk.css": "/city/static/css/1.d208e434.chunk.css",
   "static/js/1.76c7b1c2.chunk.js": "/city/static/js/1.76c7b1c2.chunk.js",
   "static/js/1.76c7b1c2.chunk.js.map": "/city/static/js/1.76c7b1c2.chunk.js.map",
@@ -32,8 +32,8 @@
   "static/media/9.png": "/city/static/media/9.f9c2aeb9.png",
   "static/media/baoen2.png": "/city/static/media/baoen2.8c31ca99.png",
   "static/css/1.d208e434.chunk.css.map": "/city/static/css/1.d208e434.chunk.css.map",
-  "static/css/main.3423848c.chunk.css.map": "/city/static/css/main.3423848c.chunk.css.map",
+  "static/css/main.f17d9d68.chunk.css.map": "/city/static/css/main.f17d9d68.chunk.css.map",
   "index.html": "/city/index.html",
-  "precache-manifest.816d8e374875068dfcd0811ed66f8946.js": "/city/precache-manifest.816d8e374875068dfcd0811ed66f8946.js",
+  "precache-manifest.f0e54a4f2c9394e07ed21cb8e0e8c283.js": "/city/precache-manifest.f0e54a4f2c9394e07ed21cb8e0e8c283.js",
   "service-worker.js": "/city/service-worker.js"
 }
